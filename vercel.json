@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/age", "destination": "/age-calculator-app-main/index.html" },
+    {
+      "source": "/newletter",
+      "destination": "/newsletter-sign-up-with-success-message-main/index.html"
+    }
+  ]
+}
