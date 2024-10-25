@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "boldItalic"; /* Define the font family name */
+  src: url("assets/fonts/Poppins-ExtraBoldItalic.ttf") format("truetype"); /* Specify the path to the font file */
+}
+@font-face {
+  font-family: "bold"; /* Define the font family name */
+  src: url("assets/fonts/Poppins-Bold.ttf") format("truetype"); /* Specify the path to the font file */
+}
+@font-face {
+  font-family: "regular"; /* Define the font family name */
+  src: url("assets/fonts/Poppins-Regular.ttf") format("truetype"); /* Specify the path to the font file */
+}
+@font-face {
+  font-family: "italic"; /* Define the font family name */
+  src: url("assets/fonts/Poppins-Italic.ttf") format("truetype"); /* Specify the path to the font file */
+}
+@media (min-width: 600px) {
+  .inputBoard {
+    margin-right: 100px;
+  }
+  .divide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .resultBoard {
+    font-size: 80px;
+  }
+  button {
+    width: 80px; /* Set width */
+    height: 70px; /* Set height */
+    border-radius: 50%; /* Make it a circle */
+  }
+}
+@media (max-width: 600px) {
+  main {
+    width: 80%;
+  }
+  button[type="submit"] {
+    display: block;
+    margin: 0px auto; /* Center the button horizontally */
+    transform: translateY(-50%);
+  }
+  .resultBoard {
+    font-size: 50px;
+  }
+  .inputBoard {
+    margin-bottom: 30px;
+  }
+  button {
+    width: 60px; /* Set width */
+    height: 60px; /* Set height */
+    border-radius: 50%; /* Make it a circle */
+  }
+}
+
+body {
+  background: hsl(0, 0%, 94%);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background: hsl(0, 0%, 100%);
+  padding: 55px 50px;
+  border-radius: 5%;
+  border-bottom-right-radius: 25%;
+  max-width: 600px;
+}
+
+input ::placeholder {
+  color: hsl(0, 0%, 86%);
+}
+
+/* Add focus styles */
+input:focus {
+  border: 1px solid hsl(259, 100%, 65%);
+  outline: none; /* Remove default outline */
+}
+
+.inputBoard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input {
+  height: 50px;
+  /* width: 120px; */
+  width: 70%;
+  margin: 10px 10px 0 0;
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 80%);
+  font-size: 32px;
+  font-family: "bold";
+  padding: 5px 0 5px 10px;
+  cursor: pointer;
+}
+
+.inputBoard label {
+  color: hsl(0, 1%, 44%);
+  font-weight: 700;
+}
+
+button {
+  background-color: hsl(259, 100%, 65%);
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  display: flex; /* Center the text inside the button */
+  justify-content: center; /* Center the text inside the button */
+  align-items: center;
+}
+button:hover {
+  background-color: black;
+}
+
+.horizontal-line {
+  width: 100%; /* Set the width of the line */
+  height: 1px; /* Set the height of the line */
+  background-color: hsl(0, 0%, 80%); /* Set the color of the line */
+  margin: 0; /* Optional: Add some vertical margin */
+}
+
+.resultBoard {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  font-family: "boldItalic";
+}
+
+.eachResult {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+.eachResult p {
+  margin: 0;
+  line-height: 1;
+}
+
+.purple {
+  color: hsl(259, 100%, 65%);
+  font-family: "bold";
+}
+
+.error {
+  color: hsl(0, 100%, 67%);
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
+  font-family: "Italic";
+}
+
+label {
+  font-family: "bold";
+  font-size: 15px;
+  letter-spacing: 3px;
+}
