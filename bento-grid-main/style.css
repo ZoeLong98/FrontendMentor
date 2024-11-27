@@ -1,0 +1,376 @@
+@font-face {
+  font-family: "DMSans";
+  src: url("assets/fonts/static/DMSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "DMSans_Medium";
+  src: url("assets/fonts/static/DMSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DMSans_Italic";
+  src: url("assets/fonts/static/DMSans-MediumItalic.ttf") format("truetype");
+}
+
+.text-preset-1 {
+  font-family: "DMSans_Medium";
+  font-size: 68px;
+  line-height: 93.5%;
+  letter-spacing: -3px;
+}
+
+.text-preset-2 {
+  font-family: "DMSans";
+  font-size: 50px;
+  line-height: 95%;
+  letter-spacing: -2px;
+  font-weight: 400;
+}
+
+.text-preset-3 {
+  font-family: "DMSans";
+  font-size: 40px;
+  line-height: 87%;
+  letter-spacing: -2px;
+}
+
+.text-preset-4 {
+  font-family: "DMSans";
+  font-size: 18px;
+  line-height: 111%;
+  letter-spacing: 0px;
+}
+
+html,
+body {
+  width: 1440px;
+  height: 1029px;
+  margin: 0;
+}
+body {
+  padding: 83px 160px;
+}
+.image-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-position: top left;
+  display: block;
+}
+
+body {
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 32px;
+  opacity: 0.9;
+
+  /* background-color: peachpuff; */
+}
+
+#leftTop {
+  grid-column: 1/4;
+  grid-row: 1 / 6;
+  background: #f9eee2;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 32px;
+}
+
+#leftBottom {
+  grid-column: 1/4;
+  grid-row: 6 / 11;
+  background: #ffcc6a;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 24px;
+}
+
+#middleTop {
+  grid-column: 4/10;
+  grid-row: 1 / 5;
+  background: #7551dc;
+  border-radius: 10px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 32px;
+}
+
+#middleLeft {
+  grid-column: 4/7;
+  grid-row: 5 / 8;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#middleRight {
+  grid-column: 7/10;
+  grid-row: 5 / 8;
+  background: #ffcc6a;
+  border-radius: 10px;
+  padding: 24px 24px 0px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#middleBottom {
+  grid-column: 4/7;
+  grid-row: 8 / 11;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: self-start;
+  padding: 24px;
+}
+
+#rightTop {
+  grid-column: 10/13;
+  grid-row: 1 / 8;
+  background: #dbd1fc;
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+}
+
+#rightBottom {
+  grid-column: 7/13;
+  grid-row: 8 / 11;
+  background: #7551dc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 24px;
+}
+
+@media (min-width: 768px) {
+  .responsive-image {
+    object-fit: cover;
+    position: absolute;
+    right: -32px;
+    width: calc(100% + 32px);
+    height: 100%;
+    object-position: top left;
+    display: block;
+  }
+  .responsive-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    height: 428px;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 768px) {
+  html,
+  body {
+    width: 768px;
+    height: auto;
+  }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 32px;
+  }
+  #middleLeft {
+    grid-column: 1/2;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #middleRight {
+    grid-column: 2/3;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #leftTop {
+    grid-column: 1 / 2;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #leftBottom {
+    grid-column: 2/3;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #middleTop,
+  #rightTop {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #middleBottom {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #middleTop {
+    height: 324px;
+  }
+  #rightTop {
+    text-align: center;
+    align-items: center;
+    gap: 24px;
+  }
+  #rightTop div {
+    width: 60%;
+  }
+  #rightBottom {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .responsive-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 375px) {
+  html,
+  body {
+    width: 375px;
+    height: auto;
+  }
+
+  body {
+    padding: 16px;
+    flex-direction: column;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 32px;
+  }
+
+  #leftTop,
+  #leftBottom,
+  #middleTop,
+  #middleLeft,
+  #middleRight,
+  #middleBottom,
+  #rightTop,
+  #rightBottom {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  #middleBottom {
+    align-items: start;
+  }
+  #rightBottom div {
+    width: 80%;
+  }
+
+  #leftTop img {
+    width: 70%;
+  }
+
+  .image-container {
+    justify-content: start;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-position: top left;
+    display: block;
+  }
+  .responsive-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .text-preset-1 {
+    font-family: "DMSans_Medium";
+    font-size: 54px;
+    line-height: 93.5%;
+    letter-spacing: -3px;
+  }
+
+  .text-preset-2 {
+    font-family: "DMSans";
+    font-size: 40px;
+    line-height: 95%;
+    letter-spacing: -2px;
+    font-weight: 400;
+  }
+
+  .text-preset-3 {
+    font-family: "DMSans";
+    font-size: 28px;
+    line-height: 87%;
+    letter-spacing: -2px;
+  }
+
+  .text-preset-4 {
+    font-family: "DMSans";
+    font-size: 18px;
+    line-height: 111%;
+    letter-spacing: 0px;
+  }
+}
