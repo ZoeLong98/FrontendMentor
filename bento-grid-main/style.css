@@ -43,12 +43,17 @@
 
 html,
 body {
-  width: 1440px;
+  max-width: 1400px;
   height: 1029px;
   margin: 0;
 }
 body {
   padding: 83px 160px;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .image-container {
   width: 100%;
@@ -66,14 +71,6 @@ body {
   display: block;
 }
 
-body {
-  background: #fafafa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .container {
   height: 100%;
   display: grid;
@@ -81,8 +78,6 @@ body {
   grid-template-rows: repeat(10, 1fr);
   gap: 32px;
   opacity: 0.9;
-
-  /* background-color: peachpuff; */
 }
 
 #leftTop {
@@ -180,6 +175,9 @@ body {
 }
 
 @media (min-width: 768px) {
+  body {
+    min-width: 1100px;
+  }
   .responsive-image {
     object-fit: cover;
     position: absolute;
@@ -203,7 +201,8 @@ body {
 @media (min-width: 375px) and (max-width: 768px) {
   html,
   body {
-    width: 768px;
+    /* max-width: 768px; */
+    min-width: 600px;
     height: auto;
   }
   .container {
@@ -283,7 +282,7 @@ body {
 @media (max-width: 375px) {
   html,
   body {
-    width: 375px;
+    min-width: 250px;
     height: auto;
   }
 
