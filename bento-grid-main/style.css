@@ -14,14 +14,14 @@
 
 .text-preset-1 {
   font-family: "DMSans_Medium";
-  font-size: 68px;
+  font-size: 62px;
   line-height: 93.5%;
   letter-spacing: -3px;
 }
 
 .text-preset-2 {
   font-family: "DMSans";
-  font-size: 50px;
+  font-size: 40px;
   line-height: 95%;
   letter-spacing: -2px;
   font-weight: 400;
@@ -29,7 +29,7 @@
 
 .text-preset-3 {
   font-family: "DMSans";
-  font-size: 40px;
+  font-size: 32px;
   line-height: 87%;
   letter-spacing: -2px;
 }
@@ -98,7 +98,7 @@ body {
   background: #ffcc6a;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   padding: 24px;
@@ -171,12 +171,14 @@ body {
   border-radius: 10px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 24px;
 }
 
 @media (min-width: 768px) {
   body {
-    min-width: 1100px;
+    min-width: 1200px;
   }
   .responsive-image {
     object-fit: cover;
