@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark {
+  --tw-bg-opacity: 1;
+  background-color: rgba(45, 45, 45, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.custom-list-item::marker {
+  color: #a445ed;
+}
+
+.icon-moon {
+  stroke: #838383;
+}
+
+@media (prefers-color-scheme: dark) {
+  .icon-moon {
+    stroke: #a445ed; /* 暗色模式下的颜色 */
+  }
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("/fonts/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inconsolate-Bold";
+  src: url("/fonts/Inconsolate-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inconsolate-Regular";
+  src: url("/fonts/Inconsolate-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lora-Bold";
+  src: url("/fonts/Lora-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lora-Regular";
+  src: url("/fonts/Lora-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lora-BoldItalic";
+  src: url("/fonts/Lora-BoldItalic.ttf") format("truetype");
+}
+/* globals.css */
+:root {
+  --cancel-button-color: #808080; /* 亮模式下的灰色 */
+}
+
+.dark {
+  --cancel-button-color: #a9a9a9; /* 暗黑模式下的灰色 */
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23var(--cancel-button-color"><line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" strokeWidth="3"/><line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" strokeWidth="3"/></svg>')
+    no-repeat center;
+  cursor: pointer;
+}
