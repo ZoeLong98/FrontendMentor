@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { useTheme } from "@/components/ThemeContent";
-import Image from "next/image";
 
 interface SliderButtonWithIconProps {
   onToggle?: (isOn: boolean) => void; // 可选回调函数，触发切换时调用

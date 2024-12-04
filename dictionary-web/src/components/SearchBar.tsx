@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
-
+import React from "react";
+import Image from "next/image";
 interface SearchBarProps {
   onSearch?: (query: string) => void;
 }
@@ -29,12 +29,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           aria-label="Search for any word"
         />
         <button type="submit" aria-label="Submit search">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/db5654bd1f8d5ff5ac890654a88dda2860a6af12ab9a17fd8c24a9fdd88859ee?placeholderIfAbsent=true&apiKey=8b37e39a71bd4bd3b190d9d326dd5d75"
-            alt=""
-            className="object-contain shrink-0 my-auto w-4 aspect-square"
-          />
+          <Image src="/icon-search.svg" width={24} height={24} alt="search" />
         </button>
       </form>
     </div>

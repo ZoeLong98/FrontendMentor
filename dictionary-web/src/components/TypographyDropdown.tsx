@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { TypographyDropdownProps } from "./types";
 import Image from "next/image";
 import { useFont } from "./ThemeContent";

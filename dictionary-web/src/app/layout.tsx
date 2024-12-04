@@ -12,7 +12,7 @@ export default function RootLayout({
       <ThemeProvider>
         <body className="dark:bg-black min-h-screen">
           {children}
-          <div className="text-sm text-center">
+          <div className="text-sm text-center dark:bg-black dark:text-white">
             Challenge by{" "}
             <a href="https://www.frontendmentor.io/profile/ZoeLong98">
               Frontend Mentor

@@ -10,7 +10,26 @@ interface WordProps {
 }
 
 const Word: React.FC<WordProps> = ({ word }) => {
-  const [data, setData] = useState<any>(null);
+  interface Phonetic {
+    text: string;
+    audio: string;
+  }
+
+  interface Meaning {
+    partOfSpeech: string;
+    definitions: { definition: string; example?: string }[];
+    synonyms: string[];
+    antonyms: string[];
+  }
+
+  interface WordData {
+    word: string;
+    phonetics: Phonetic[];
+    meanings: Meaning[];
+    sourceUrls: string[];
+  }
+
+  const [data, setData] = useState<WordData[]>([]);
   const [error, setError] = useState<string | null>(null);
   const { fontFamily } = useFont();
 
@@ -29,25 +48,30 @@ const Word: React.FC<WordProps> = ({ word }) => {
         setData(result);
         setError(null);
       } catch (error) {
-        setData(null);
+        setData([]);
         setError((error as Error).message);
       }
     };
     fetchData();
   }, [word]);
+
   const playAudio = (audioUrl: string) => {
     const audio = new Audio(audioUrl);
     audio.play();
   };
 
-  const firstPhonetic = data
-    ? data[0].phonetics.find((phonetic: any) => phonetic.text && phonetic.audio)
-    : null;
+  const firstPhonetic =
+    data.length > 0
+      ? data[0].phonetics.find(
+          (phonetic: { text: string; audio: string }) =>
+            phonetic.text && phonetic.audio
+        )
+      : null;
 
   return (
     <div className="container mx-auto p-4 w-full max-w-[736px] dark:text-white min-h-screen">
       {error && <NoDefinition />}
-      {data ? (
+      {data.length > 0 ? (
         <div>
           <div>
             {firstPhonetic ? (
@@ -69,7 +93,7 @@ const Word: React.FC<WordProps> = ({ word }) => {
             ) : (
               <div className="mt-8 text-6xl font-bold mb-2">{data[0].word}</div>
             )}
-            {data[0].meanings.map((meaning: any, index: number) => (
+            {data[0].meanings.map((meaning: Meaning, index: number) => (
               <div key={index} className="mb-4">
                 <div className="flex flex-row gap-5 items-center">
                   <h3 className="text-2xl  font-bold my-5">
@@ -83,7 +107,10 @@ const Word: React.FC<WordProps> = ({ word }) => {
                     Meaning
                   </div>
                   {meaning.definitions.map(
-                    (definition: any, defIndex: number) => (
+                    (
+                      definition: { definition: string; example?: string },
+                      defIndex: number
+                    ) => (
                       <div
                         key={defIndex}
                         className="ml-5 text-lg my-3 leading-snug"
@@ -96,7 +123,7 @@ const Word: React.FC<WordProps> = ({ word }) => {
                         </div>
                       </div>
                     )
-                  )}
+                  )}{" "}
                 </ul>
                 {meaning.synonyms[0] && (
                   <div className="flex flex-row h-fit mt-6">
@@ -145,7 +172,10 @@ const Word: React.FC<WordProps> = ({ word }) => {
                 <div className="text-custom-medium  text-sm underline">
                   Source
                 </div>
-                <Link className="text-sm underline" href={data[0].sourceUrls}>
+                <Link
+                  className="text-sm underline"
+                  href={data[0].sourceUrls[0]}
+                >
                   {data[0].sourceUrls}
                 </Link>
               </div>

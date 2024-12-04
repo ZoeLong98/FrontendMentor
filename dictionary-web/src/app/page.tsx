@@ -8,13 +8,12 @@ import FontSelector from "@/components/TypographyDropdown";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("hello");
-  const word = "hello";
   return (
     <div className="flex flex-col justify-center w-full py-6 dark:bg-custom-darkest">
       <div className="p-3 w-full flex flex-row justify-between max-w-[736px] mx-auto">
         <Image src="/logo.svg" width={32} height={36} alt="logo" />
         <div className="flex flex-row gap-5 items-center">
-          <FontSelector />
+          <FontSelector options={[]} />
           <div className="w-[1px] h-6 bg-gray-300"></div>
           <SliderButtonWithIcon />
         </div>
