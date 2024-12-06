@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useTheme } from "@/components/ThemeContent";
 
 interface SliderButtonWithIconProps {
-  onToggle?: (isOn: boolean) => void; // 可选回调函数，触发切换时调用
+  onToggle?: (isOn: boolean) => void;
 }
 
 const SliderButtonWithIcon: React.FC<SliderButtonWithIconProps> = ({

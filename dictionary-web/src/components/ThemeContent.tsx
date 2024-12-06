@@ -20,34 +20,49 @@ interface FontContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 const FontContext = createContext<FontContextType | undefined>(undefined);
 
-export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
-  children,
-}) => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-  const [fontFamily, setFontFamily] = useState("sans"); // Default font family
-
-  useEffect(() => {
-    // 检查本地存储或操作系统的首选主题
+const getPreferredTheme = () => {
+  if (typeof window !== "undefined") {
     const storedTheme = localStorage.getItem("theme");
     const preferredTheme =
       storedTheme ||
       (window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light");
-    setTheme(preferredTheme as "light" | "dark");
-    document.documentElement.classList.add(preferredTheme);
-  }, []);
+    return preferredTheme as "light" | "dark";
+  }
+  return "light";
+};
+
+const getPreferredFontFamily = () => {
+  if (typeof window !== "undefined") {
+    const storedFontFamily = localStorage.getItem("fontFamily");
+    return storedFontFamily || "sans";
+  }
+  return "sans";
+};
+
+export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
+  const [theme, setTheme] = useState<"light" | "dark">(getPreferredTheme());
+  const [fontFamily, setFontFamily] = useState(getPreferredFontFamily());
+
+  useEffect(() => {
+    document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", theme);
+    return () => {
+      document.documentElement.classList.remove(theme);
+    };
+  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.remove(theme);
-    document.documentElement.classList.add(newTheme);
   };
 
   useEffect(() => {
     document.documentElement.classList.add(fontFamily);
+    localStorage.setItem("fontFamily", fontFamily);
     return () => {
       document.documentElement.classList.remove(fontFamily);
     };
@@ -75,5 +90,6 @@ export const useFont = () => {
   if (!context) {
     throw new Error("useFont must be used within a FontProvider");
   }
+
   return context;
 };
