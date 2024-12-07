@@ -22,7 +22,7 @@ const FontContext = createContext<FontContextType | undefined>(undefined);
 
 const getPreferredTheme = () => {
   if (typeof window !== "undefined") {
-    const storedTheme = localStorage.getItem("theme");
+    const storedTheme = localStorage.getItem("theme_dic");
     const preferredTheme =
       storedTheme ||
       (window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -30,43 +30,57 @@ const getPreferredTheme = () => {
         : "light");
     return preferredTheme as "light" | "dark";
   }
-  return "light";
+  return "light"; // 默认值
 };
 
 const getPreferredFontFamily = () => {
   if (typeof window !== "undefined") {
-    const storedFontFamily = localStorage.getItem("fontFamily");
-    return storedFontFamily || "sans";
+    const storedFontFamily = localStorage.getItem("fontFamily_dic");
+    return storedFontFamily || "sans"; // 默认字体
   }
-  return "sans";
+  return "sans"; // 默认值
 };
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState<"light" | "dark">(getPreferredTheme());
-  const [fontFamily, setFontFamily] = useState(getPreferredFontFamily());
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [fontFamily, setFontFamily] = useState("sans");
+
+  useEffect(() => {
+    const preferredTheme = getPreferredTheme();
+    setTheme(preferredTheme);
+  }, []);
+
+  useEffect(() => {
+    const preferredFontFamily = getPreferredFontFamily();
+    setFontFamily(preferredFontFamily);
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.add(theme);
-    localStorage.setItem("theme", theme);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme_dic", theme);
+    }
     return () => {
       document.documentElement.classList.remove(theme);
     };
   }, [theme]);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  };
-
   useEffect(() => {
     document.documentElement.classList.add(fontFamily);
-    localStorage.setItem("fontFamily", fontFamily);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("fontFamily_dic", fontFamily);
+    }
     return () => {
       document.documentElement.classList.remove(fontFamily);
     };
   }, [fontFamily]);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -90,6 +104,5 @@ export const useFont = () => {
   if (!context) {
     throw new Error("useFont must be used within a FontProvider");
   }
-
   return context;
 };

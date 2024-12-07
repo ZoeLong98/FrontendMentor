@@ -12,7 +12,6 @@ const fontOptions = [
 
 const TypographyDropdown: React.FC<TypographyDropdownProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedFont, setSelectedFont] = useState(fontOptions[0]);
   const { fontFamily, setFontFamily } = useFont();
 
   const toggleDropdown = () => {
@@ -20,7 +19,6 @@ const TypographyDropdown: React.FC<TypographyDropdownProps> = () => {
   };
 
   const handleFontChange = (fontOption: (typeof fontOptions)[0]) => {
-    setSelectedFont(fontOption);
     setIsOpen(false);
     setFontFamily(fontOption.fontFamily);
     console.log(fontFamily);
@@ -37,8 +35,11 @@ const TypographyDropdown: React.FC<TypographyDropdownProps> = () => {
           if (e.key === "Enter") toggleDropdown();
         }}
       >
-        <div className={`${selectedFont.fontFamily} dark:text-custom-light`}>
-          {selectedFont.label}
+        <div className={`${fontFamily} dark:text-custom-light`}>
+          {
+            fontOptions.find((option) => option.fontFamily === fontFamily)
+              ?.label
+          }
         </div>
         <Image
           src="/icon-arrow-down.svg"
@@ -54,7 +55,9 @@ const TypographyDropdown: React.FC<TypographyDropdownProps> = () => {
               <div
                 key={fontOption.label}
                 className={`cursor-pointer  ${index > 0 ? "mt-4" : ""} ${
-                  fontOption.label === selectedFont.label
+                  fontOption.label ===
+                  fontOptions.find((option) => option.fontFamily === fontFamily)
+                    ?.label
                     ? "text-purple-600"
                     : "dark:text-white"
                 } ${fontOption.fontFamily} text-lg mx-2`}
