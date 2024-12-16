@@ -1,0 +1,33 @@
+.touch-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin: 30px 0;
+  h1 {
+    letter-spacing: -0.36px;
+    line-height: 42px;
+    font: 700 40px Ibarra Real Nova, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    text-align: start;
+    white-space: nowrap;
+    margin: 10px 0;
+  }
+}
+
+.touch-text {
+  max-width: 635px;
+  text-align: start;
+  p {
+    color: #33323d;
+    letter-spacing: 0px;
+    line-height: 30px !important;
+    font: 200 16px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+}
+
+@media (max-width: 768px) {
+  .touch-container {
+    flex-direction: column;
+  }
+}

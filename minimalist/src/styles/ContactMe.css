@@ -1,0 +1,58 @@
+.contactme h1 {
+  color: #33323d;
+  letter-spacing: -0.36px;
+  line-height: 42px;
+  margin-bottom: 10px;
+  font: 700 40px Ibarra Real Nova, -apple-system, Roboto, Helvetica, sans-serif;
+}
+.contactme button {
+  background-color: transparent;
+  color: #33323d;
+  letter-spacing: 2px;
+  width: 202px;
+  height: 48px;
+  border: 1px solid #33323d;
+
+  font: 200 12px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
+}
+.divider-contact {
+  border: none;
+  border-top: 1px solid #cacaca;
+  margin: 30px 0;
+  width: 99%;
+}
+.contactme {
+  width: 100%;
+  margin: 120px auto;
+}
+@media (min-width: 376px) {
+  h1 {
+    width: 350px;
+  }
+  .contactme {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .contactme .divider {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 375px) {
+  .contactme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contactme h1 {
+    max-width: 311px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .divider-contact {
+    display: none;
+  }
+}

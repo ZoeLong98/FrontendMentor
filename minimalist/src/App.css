@@ -1,0 +1,51 @@
+#root {
+  margin: 0;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  margin: 0;
+  width: fit-content;
+  min-width: 100vw;
+}
+a {
+  text-decoration: none;
+}
+
+svg {
+  display: flex;
+  align-self: center;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1100px;
+  align-items: center;
+}
+
+Header {
+  flex: 0 1 auto;
+}
+
+Footer {
+  flex: 0 1 auto;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) and (min-width: 376px) {
+  .mainContainer {
+    box-sizing: border-box;
+    padding: 0 40px;
+  }
+}
+@media (max-width: 376px) {
+  .mainContainer {
+    box-sizing: border-box;
+    padding: 0 40px;
+  }
+}

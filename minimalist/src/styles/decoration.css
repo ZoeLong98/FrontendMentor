@@ -1,0 +1,12 @@
+.divider {
+  border: none;
+  border-top: 1px solid #cacaca;
+  margin: 30px 0;
+  width: 99%;
+}
+.vertical-line {
+  border: none;
+  border-left: 1px solid #cacaca;
+  margin: 0px 30px;
+  height: 100%;
+}

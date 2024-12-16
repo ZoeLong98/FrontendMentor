@@ -1,0 +1,61 @@
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin: 40px 0;
+  h1 {
+    letter-spacing: -0.36px;
+    line-height: 42px;
+    font: 700 40px Ibarra Real Nova, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    text-align: start;
+    white-space: nowrap;
+    margin: 10px 0;
+  }
+}
+
+.contact-form {
+  max-width: 635px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  button {
+    width: 200px;
+    background: #203a4c;
+    color: white;
+    font: 200 12px Public Sans;
+    border: none;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+  }
+}
+
+.input-label {
+  line-height: 30px !important;
+  font: 300 13px Public Sans;
+  text-align: start;
+}
+
+.input-field {
+  border: none;
+  background-color: #e5e4e4;
+  padding: 15px 20px;
+  margin-bottom: 24px;
+}
+.input-field::placeholder {
+  text-align: left;
+  vertical-align: top;
+  color: #888;
+  font: 300 13px Public Sans;
+}
+.message {
+  height: 96px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}

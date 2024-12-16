@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Modak&family=Patrick+Hand+SC&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+.aboutMe {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: auto;
+}
+.aboutMe .divider {
+  border: none;
+  border-top: 1px solid #979797;
+  margin: 1px 0;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.profile-text h1 {
+  color: #33323d;
+  letter-spacing: -0.36px;
+  line-height: 42px;
+  margin-bottom: 10px;
+  font: 700 40px Ibarra Real Nova, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.profile-text p {
+  color: #33323d;
+  letter-spacing: 0px;
+  line-height: 30px !important;
+  font: 200 16px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.profile-text button {
+  background-color: transparent;
+  color: #33323d;
+  letter-spacing: 2px;
+  width: 202px;
+  height: 48px;
+  border: 1px solid #33323d;
+  margin-bottom: 20px;
+  font: 200 12px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+@media (min-width: 769px) {
+  .aboutMe {
+    flex-direction: row;
+    justify-content: start;
+  }
+  .profile-container {
+    width: 540px;
+    height: 600px;
+  }
+
+  .profile-pic {
+    width: 100%;
+  }
+
+  .profile-text {
+    width: 350px;
+    margin-left: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 377px) {
+  .aboutMe {
+    flex-direction: row;
+    justify-content: start;
+  }
+  .profile-container {
+    width: 281px;
+    height: 600px;
+  }
+  .profile-pic {
+    width: 100%;
+  }
+
+  .profile-text {
+    width: 339px;
+    margin-left: 69px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+  }
+}
+
+@media (max-width: 376px) {
+  .aboutMe {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-container {
+    width: 311px;
+    height: 346px;
+    margin: 20px auto;
+  }
+  .profile-pic {
+    width: 100%;
+  }
+  .profile-text {
+    max-width: 311px;
+    margin: 20px auto;
+  }
+  .profile-text button {
+    margin-bottom: 40px;
+  }
+}

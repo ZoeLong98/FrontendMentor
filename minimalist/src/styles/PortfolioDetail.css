@@ -1,0 +1,99 @@
+p {
+  text-align: left;
+  color: #33323d;
+  letter-spacing: 0px;
+  line-height: 30px !important;
+  font: 200 16px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
+}
+.detailwrapper {
+  width: 100%;
+  text-align: left;
+
+  h1 {
+    color: #33323d;
+    letter-spacing: -0.36px;
+    line-height: 42px;
+    font: 700 40px Ibarra Real Nova, -apple-system, Roboto, Helvetica,
+      sans-serif;
+  }
+  h2 {
+    color: #33323d;
+    letter-spacing: -0.29px;
+    line-height: 42px;
+    margin-bottom: 10px;
+    font: 500 32px Ibarra Real Nova, -apple-system, Roboto, Helvetica,
+      sans-serif;
+  }
+}
+
+.static-img {
+  margin-bottom: 20px;
+}
+
+.detail-img {
+  max-width: 1100px;
+  width: 100%;
+}
+.detailContainer {
+  margin: 50px 0;
+  max-width: 1100px;
+  width: 100%;
+  button {
+    background-color: transparent;
+    color: #33323d;
+    letter-spacing: 2px;
+    width: 202px;
+    height: 48px;
+    border: 1px solid #33323d;
+    margin: 20px auto;
+    font: 200 12px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+}
+.static-img {
+  width: 100%;
+}
+
+.technology {
+  margin-bottom: 15px;
+  color: #5fb4a2;
+  letter-spacing: 0px;
+  line-height: 30px;
+  font: 500 16px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
+}
+@media (min-width: 769px) {
+  .detailContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .overview {
+    max-width: 350px;
+    width: 40%;
+  }
+  .detail {
+    width: 60%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 376px) {
+  .divide {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    p {
+      width: 50%;
+      margin-top: -70px;
+    }
+  }
+  .technology {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 376px) {
+  .technology {
+    font-size: 13px;
+  }
+}
