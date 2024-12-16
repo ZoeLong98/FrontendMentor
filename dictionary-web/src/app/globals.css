@@ -65,6 +65,7 @@ body {
   font-family: "Lora-BoldItalic";
   src: url("/fonts/Lora-BoldItalic.ttf") format("truetype");
 }
+
 /* globals.css */
 :root {
   --cancel-button-color: #808080; /* 亮模式下的灰色 */
