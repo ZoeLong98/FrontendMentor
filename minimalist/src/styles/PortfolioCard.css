@@ -78,7 +78,7 @@
   }
 }
 
-@media (max-width: 768px) and (min-width: 377px) {
+@media (max-width: 768px) and (min-width: 400px) {
   .portfolio-item {
     flex-direction: row;
     justify-content: space-between;

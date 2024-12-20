@@ -13,6 +13,7 @@ export default function PortfolioCard({
 
   const handleButtonClick = () => {
     navigate(projectLink);
+    window.scrollTo(0, 0);
   };
 
   return (

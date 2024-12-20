@@ -1,7 +1,10 @@
 import React from "react";
 import "../styles/AboutMe.css";
-
+import { Link } from "react-router-dom";
 export default function AboutMe() {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <div className="aboutMe">
       <div className="profile-container">
@@ -38,7 +41,11 @@ export default function AboutMe() {
           outdoors. I love being out in nature whether that’s going for a walk,
           run or cycling. I’d love you to check out my work.
         </p>
-        <button>GO TO PORTFOLIO</button>
+        <div>
+          <Link to="/portfolio" onClick={scrollToTop}>
+            Go To Portfolio
+          </Link>
+        </div>
         <hr className="divider" />
       </div>
     </div>

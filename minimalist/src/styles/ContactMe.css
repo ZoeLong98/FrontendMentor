@@ -5,7 +5,10 @@
   margin-bottom: 10px;
   font: 700 40px Ibarra Real Nova, -apple-system, Roboto, Helvetica, sans-serif;
 }
-.contactme button {
+.contactme div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   color: #33323d;
   letter-spacing: 2px;

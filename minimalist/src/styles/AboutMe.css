@@ -33,17 +33,23 @@
   font: 200 16px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
-.profile-text button {
+.profile-text div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   color: #33323d;
   letter-spacing: 2px;
   width: 202px;
   height: 48px;
-  border: 1px solid #33323d;
   margin-bottom: 20px;
-  font: 200 12px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
+  border: 1px solid #33323d;
+  a {
+    text-decoration: none;
+    color: #33323d;
+  }
+  font: 200 14px Public Sans, -apple-system, Roboto, Helvetica, sans-serif;
 }
-
 @media (min-width: 769px) {
   .aboutMe {
     flex-direction: row;

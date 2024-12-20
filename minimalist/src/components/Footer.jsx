@@ -1,8 +1,12 @@
 import React from "react";
 import "../styles/Footer.css";
 import Socialicons from "./Socialicons";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -14,9 +18,15 @@ export default function Footer() {
           />
         </svg>
         <nav className="footer-nav">
-          <a href="/">HOME</a>
-          <a href="/portfolio">PORTFOLIO</a>
-          <a href="/contact">CONTACT ME</a>
+          <Link to="/" onClick={scrollToTop}>
+            HOME
+          </Link>
+          <Link to="/portfolio" onClick={scrollToTop}>
+            PORTFOLIO
+          </Link>
+          <Link to="/contact" onClick={scrollToTop}>
+            CONTACT ME
+          </Link>
         </nav>
       </div>
       <Socialicons iconColor="#000000" />
