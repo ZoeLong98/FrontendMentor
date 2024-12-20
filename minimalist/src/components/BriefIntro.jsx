@@ -7,7 +7,7 @@ export default function BriefIntro() {
       <picture>
         <source
           srcSet="/homepage/mobile/image-homepage-hero@2x.jpg"
-          media="(max-width: 376px)"
+          media="(max-width: 400px)"
         />
         <source
           srcSet="/homepage/tablet/image-homepage-hero@2x.jpg"

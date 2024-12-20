@@ -8,7 +8,7 @@ export default function AboutMe() {
         <picture>
           <source
             srcSet="/homepage/mobile/image-homepage-profile@2x.jpg"
-            media="(max-width: 376px)"
+            media="(max-width: 400px)"
           />
           <source
             srcSet="/homepage/tablet/image-homepage-profile@2x.jpg"

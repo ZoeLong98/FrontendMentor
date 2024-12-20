@@ -5,7 +5,7 @@ import "../styles/Header.css";
 export default function Header() {
   const location = useLocation();
   const currentPath = location.pathname;
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 400);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -31,17 +31,41 @@ export default function Header() {
           />
         </svg>
         {isMobile ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={toggleModal}
-            style={{ cursor: "pointer" }}
-            width="24"
-            height="13"
-          >
-            <g fill="#33323D" fill-rule="evenodd">
-              <path d="M0 0h24v1H0zM0 6h24v1H0zM0 12h24v1H0z" />
-            </g>
-          </svg>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              onClick={toggleModal}
+              style={{ cursor: "pointer" }}
+              width="24"
+              height="13"
+            >
+              <g fill="#33323D" fill-rule="evenodd">
+                <path d="M0 0h24v1H0zM0 6h24v1H0zM0 12h24v1H0z" />
+              </g>
+            </svg>
+            {isModalOpen && (
+              <div className="mobile-nav">
+                <Link
+                  to="/"
+                  className={currentPath === "/" ? "active-link" : ""}
+                >
+                  HOME
+                </Link>
+                <Link
+                  to="/portfolio"
+                  className={currentPath === "/portfolio" ? "active-link" : ""}
+                >
+                  PORTFOLIO
+                </Link>
+                <Link
+                  to="/contact"
+                  className={currentPath === "/contact" ? "active-link" : ""}
+                >
+                  CONTACT ME
+                </Link>
+              </div>
+            )}
+          </div>
         ) : (
           <nav className="nav-links">
             <Link to="/" className={currentPath === "/" ? "active-link" : ""}>
@@ -62,25 +86,6 @@ export default function Header() {
           </nav>
         )}
       </header>
-      {isModalOpen && (
-        <div className="mobile-nav">
-          <Link to="/" className={currentPath === "/" ? "active-link" : ""}>
-            HOME
-          </Link>
-          <Link
-            to="/portfolio"
-            className={currentPath === "/portfolio" ? "active-link" : ""}
-          >
-            PORTFOLIO
-          </Link>
-          <Link
-            to="/contact"
-            className={currentPath === "/contact" ? "active-link" : ""}
-          >
-            CONTACT ME
-          </Link>
-        </div>
-      )}
     </div>
   );
 }

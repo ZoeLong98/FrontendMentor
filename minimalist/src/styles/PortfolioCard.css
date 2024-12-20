@@ -101,7 +101,7 @@
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 400px) {
   .img-container {
     width: 100%;
     object-fit: cover;

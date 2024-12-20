@@ -26,9 +26,9 @@
 }
 .contactme {
   width: 100%;
-  margin: 120px auto;
+  margin: 100px auto;
 }
-@media (min-width: 376px) {
+@media (min-width: 400px) {
   h1 {
     width: 350px;
   }
@@ -43,7 +43,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 400px) {
   .contactme {
     display: flex;
     flex-direction: column;
