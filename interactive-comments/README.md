@@ -11,10 +11,7 @@ This is a solution to the [Interactive comments section challenge on Frontend Me
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -31,12 +28,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenShot.jpg)
+![](./screenShot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://frontend-mentor-qcjr.vercel.app/)
 
 ## My process
 
@@ -46,11 +42,10 @@ Users should be able to:
 
 ### What I learned
 
-The orders of components for mobile and laptop view are very different. At first, I thought maybe write two different files for different layout, but as functions added in, it became difficult and unnecessary. So finally, I just used order, relative and absolute.
+The component order for mobile and laptop views was quite different. Initially, I considered creating two separate files for the layouts, but as more functions were added, this approach became complex and unnecessary. In the end, I managed the layout differences using CSS properties like order, relative, and absolute.
 
-The other thing I learned is how to write recursive JS, dealing with nested comments.
+Another key takeaway was learning how to write recursive JavaScript functions to handle nested comments effectively.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ZoeLong98)
+- Frontend Mentor - [@Zoe](https://www.frontendmentor.io/profile/ZoeLong98)

@@ -49,6 +49,19 @@ function Comment({ id, content, createdAt, score, user, replies }) {
     updateScoreById(id, -1, currentUser.username);
     console.log("Minus score to comment with id:", id);
   };
+  const formatContent = (content) => {
+    const parts = content.split(/(@\w+)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith("@")) {
+        return (
+          <span key={index} className="mention">
+            {part}
+          </span>
+        );
+      }
+      return part;
+    });
+  };
   return (
     <>
       <div className="comment">
@@ -96,7 +109,7 @@ function Comment({ id, content, createdAt, score, user, replies }) {
               onChange={(e) => setEditedContent(e.target.value)}
             />
           ) : (
-            <div className="commentText">{content}</div>
+            <div className="commentText">{formatContent(content)}</div>
           )}
           {isEditing && (
             <button
@@ -110,7 +123,7 @@ function Comment({ id, content, createdAt, score, user, replies }) {
         </div>
       </div>
 
-      {replyId === id && <MyCommentBox id={id} />}
+      {replyId === id && <MyCommentBox id={id} user={user.username} />}
       {showConfirmDialog && (
         <ConfirmDialog onConfirm={confirmDelete} onCancel={cancelDelete} />
       )}

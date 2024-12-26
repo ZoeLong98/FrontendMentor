@@ -5,10 +5,9 @@ import "../styles/styles.css";
 import { useContext } from "react";
 import { DataContext } from "../DataContext";
 
-function MyCommentBox({ id }) {
-  const [replyContent, setReplyContent] = useState("");
+function MyCommentBox({ id, user }) {
+  const [replyContent, setReplyContent] = useState(user ? `@${user}` : "");
   const { addReply } = useContext(DataContext);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (replyContent.trim()) {
@@ -34,7 +33,7 @@ function MyCommentBox({ id }) {
       <form onSubmit={handleSubmit}>
         <img src="/avatars/image-juliusomo.png" alt="myAvatar" />
         <textarea
-          placeholder={`Add a comment`}
+          placeholder={user ? `@${user}` : "Add a comment"}
           value={replyContent}
           onChange={(e) => setReplyContent(e.target.value)}
         ></textarea>
