@@ -1,0 +1,149 @@
+.button_purple {
+  width: 104px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #5357b6;
+  border: none;
+  color: white;
+  font: 700 16px "Roboto", sans-serif;
+  cursor: pointer;
+}
+.button_purple:hover {
+  background-color: #c5c6ef;
+}
+.vertical-line-container {
+  width: 10%;
+  background-color: #f5f6fa;
+  /* align-items: stretch; */
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 400px) {
+  .vertical-line-container {
+    width: 2%;
+  }
+}
+.vertical-line {
+  width: 2px;
+  background-color: #e9ebf0;
+  height: 100%;
+  border: none;
+}
+.reply-container {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: 100%;
+}
+.reply-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 10px;
+}
+.score-number {
+  color: #5357b6;
+  font: 700 16px "Rubik", sans-serif;
+}
+
+/* basicInfo */
+.basicInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  /* margin: 10px; */
+}
+
+.basic-avatar {
+  width: 32px;
+  height: 32px;
+  object-fit: fill;
+  img {
+    width: 100%;
+  }
+}
+
+.basic-name {
+  font: 500 16px "Rubik", sans-serif;
+}
+
+.basic-postDate {
+  font: 400 16px "Rubik", sans-serif;
+  color: #67727e;
+}
+
+.edit-box {
+  height: 100%;
+  min-height: 96px;
+  height: fit-content;
+  border-radius: 12px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-color: #d9d9d9;
+}
+
+/* text */
+.commentText {
+  font: 300 16px "Rubik", sans-serif;
+  color: #67727e;
+  text-align: left;
+  margin: 0 10px;
+  line-height: 24px;
+}
+
+/* reply */
+.reply {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 66px;
+  height: 24px;
+  cursor: pointer;
+  img {
+    width: 14px;
+    height: 12.25px;
+  }
+}
+.manage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 6px;
+}
+.manageMyComment {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  /* position: absolute; */
+  /* right: 15px; */
+  /* top: 35px; */
+  gap: 10px;
+}
+/* @media (max-width: 400px) {
+  .manageMyComment {
+    right: 10px;
+    bottom: -50px;
+  }
+  .reply {
+    right: 10px;
+    bottom: -50px;
+  }
+} */
+
+.reply-text {
+  color: #5357b6;
+  font: 500 16px "Rubik", sans-serif;
+}
+.delete-text {
+  color: #ed6368;
+  font: 500 16px "Rubik", sans-serif;
+}
+.edit-text {
+  color: #5357b6;
+  font: 500 16px "Rubik", sans-serif;
+}

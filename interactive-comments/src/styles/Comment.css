@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Modak&family=Patrick+Hand+SC&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* container */
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 730px;
+  width: 100%;
+  min-height: 140px;
+  height: fit-content;
+  margin: 0px auto;
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 10px 0px;
+  box-sizing: border-box;
+}
+
+.right-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.upper-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* width: 100%; */
+}
+
+/* score */
+.score {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6fa;
+  width: 40px;
+  height: 100px;
+  justify-content: space-around;
+  border-radius: 12px;
+  margin: 0px 5px;
+  align-self: flex-start;
+  /* box-sizing: border-box; */
+}
+
+@media (max-width: 400px) {
+  .comment-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 0 5px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .comment {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+  }
+  .score {
+    order: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    background-color: #f5f6fa;
+    justify-content: space-around;
+    border-radius: 12px;
+    div {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .comment {
+    position: relative;
+  }
+  .manageMyComment {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+  }
+  .reply {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+  }
+}
