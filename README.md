@@ -2,7 +2,6 @@
 
 Hi!👋 This repository contains all my solutions to challenges from Frontend Mentor, a great platform to practice and improve web development skills.
 
-Overview
 Below, you’ll find an overview of each challenge, including:
 
 - Live demo
