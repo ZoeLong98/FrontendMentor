@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #d87d4a;
+  --primaryHover: #fbaf85;
+  --secondary: #101010;
+  --warmWhite: #f1f1f1;
+  --golden: #d87d4a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-width: 100vw;
+  @apply font-manrope;
+}
+
+/* font */
+.title {
+  @apply font-semibold text-3xl sm:text-4xl my-5;
+}
+
+.subtitle {
+  @apply font-medium text-xl sm:text-2xl my-5;
+}
+
+.description {
+  @apply font-light text-sm text-gray-500;
+}
+
+.newProduct {
+  @apply text-sm tracking-customizeWide font-manrope font-thin;
+}
+
+/* button */
+.yellow-button {
+  @apply text-white bg-primary hover:bg-primaryHover px-6 py-3 mt-4 sm:mt-12 max-w-48 mx-auto sm:mx-0;
+}
+.black-button {
+  @apply bg-secondary hover:bg-gray-700 px-6 py-3 mt-6 sm:mt-8 max-w-48 mx-auto md:mx-0;
+}
+.simple-button {
+  @apply border border-solid border-black hover:bg-secondary hover:text-white text-center py-3 mt-5 max-w-48;
+}
