@@ -3,7 +3,6 @@
 import "./globals.css";
 import NavigationHeader from "@/components/NavigationHeader";
 import NavigationFooter from "@/components/NavigationFooter";
-import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -18,18 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    const timeout = setTimeout(() => setIsLoading(false), 500); // 模拟加载时间
-    return () => clearTimeout(timeout);
-  }, [pathname]);
 
   return (
     <html lang="en">
       <body className="flex flex-col  min-h-screen">
-        <NavigationHeader />{" "}
+        <NavigationHeader />
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}
@@ -38,7 +30,7 @@ export default function RootLayout({
             exit={{ opacity: 1 }}
             transition={{
               duration: 1.5,
-              ease: "easeInOut", // 使用现代化的缓动曲线
+              ease: "easeInOut",
             }}
           >
             <main className="flex-grow w-full">{children}</main>
