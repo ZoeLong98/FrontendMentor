@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/e-commerce-website-for-audio-arHxzH8Ri8)
+- Live Site URL: [audiophile](https://audiophile-one-tau.vercel.app/)
 
 ## My process
 
