@@ -3,6 +3,7 @@ import { CartItem } from "@/types";
 import Image from "next/image";
 import Amount from "./Amount";
 import Link from "next/link";
+import { Product } from "@/types";
 
 export default function Cart() {
   const [cartItems, setCartItems] = useState([]);
@@ -11,14 +12,20 @@ export default function Cart() {
   const handleAmountChange = (id: number) => (newAmount: number) => {
     const cart = localStorage.getItem("audiophileCart");
     if (cart) {
-      let items = JSON.parse(cart);
+      const items = JSON.parse(cart);
 
-      const itemIndex = items.findIndex((item: any) => item.id === id);
+      const itemIndex = items.findIndex((item: Product) => item.id === id);
       if (itemIndex !== -1) {
         items[itemIndex].amount = newAmount;
         localStorage.setItem("audiophileCart", JSON.stringify(items));
       }
     }
+  };
+
+  const removeAll = () => {
+    localStorage.removeItem("audiophileCart");
+    setCartItems([]);
+    setTotal(0);
   };
 
   useEffect(() => {
@@ -39,7 +46,9 @@ export default function Cart() {
       <div className="bg-white w-96 px-8 pb-8 fixed top-28 right-0 rounded-lg">
         <div className="flex justify-between items-center">
           <div className="subtitle">CART ({cartItems.length})</div>
-          <div className="description">Remove all</div>
+          <div className="description cursor-pointer" onClick={removeAll}>
+            Remove all
+          </div>
         </div>
 
         {cartItems.map((cartItem: CartItem) => (

@@ -1,4 +1,3 @@
-import { subscribe } from "diagnostics_channel";
 import React from "react";
 
 interface AmountProps {

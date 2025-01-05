@@ -27,7 +27,7 @@ export default function Home() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Link href={"/detail/6"}>
+            <Link href={"/detail/zx9-speaker"}>
               <button className="black-button">SEE PRODUCT</button>
             </Link>
           </div>
@@ -42,7 +42,7 @@ export default function Home() {
           />
           <div className="z-10 flex flex-col ">
             <div className="title">ZX7 SPEAKER</div>
-            <Link href={"/detail/5"}>
+            <Link href={"/detail/zx7-speaker"}>
               <div className="simple-button">SEE PRODUCT</div>
             </Link>
           </div>
@@ -71,7 +71,7 @@ export default function Home() {
           <div className="bg-warmWhite sm:w-1/2 rounded-lg p-8">
             <div className="z-10 flex flex-col justify-center h-full">
               <div className="title">YX1 EARPHONES</div>
-              <Link href={"/detail/1"}>
+              <Link href={"/detail/yx1-earphones"}>
                 <div className="simple-button">SEE PRODUCT</div>
               </Link>
             </div>

@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import { fetchEarphonesData } from "@/api";
 import ThreeCategory from "@/components/ThreeCategory";
 import End from "@/components/End";
+import { Product } from "@/types";
 
-export default function earphoness() {
-  const [data, setData] = useState<any[]>([]);
+export default function Earphones() {
+  const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
     async function getData() {
@@ -17,10 +18,15 @@ export default function earphoness() {
   }, []);
   return (
     <div className="flex flex-col items-center mt-32 max-w-componentMax px-6 md:mx-auto">
+      <div className="bg-secondary  text-white w-screen mt-[-32px] h-[90px] sm:h-[132px] flex items-center justify-center text-[24px] sm:text-[32px] mb-8">
+        EARPHONES
+      </div>
       {data &&
         data
-          .sort((a: any, b: any) => (b.new === a.new ? 0 : b.new ? 1 : -1))
-          .map((earphones: any, index: number) => (
+          .sort((a: Product, b: Product) =>
+            b.new === a.new ? 0 : b.new ? 1 : -1
+          )
+          .map((earphones: Product, index: number) => (
             <OverviewItem
               key={index}
               id={earphones.id}

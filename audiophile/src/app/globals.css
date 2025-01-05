@@ -19,7 +19,9 @@
     --foreground: #ededed;
   }
 }
-
+* {
+  transition: all 0.3s ease-in-out;
+}
 body {
   color: var(--foreground);
   background: var(--background);

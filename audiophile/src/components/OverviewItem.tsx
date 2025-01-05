@@ -28,6 +28,7 @@ export default function OverviewItem({
 
   return (
     <div
+      id={id.toString()}
       className={`flex flex-col w-full items-center justify-start sm:flex-row sm:gap-8 my-4 mb-16 md:my-5 ${
         order === "right" ? "sm:flex-row-reverse" : ""
       }`}

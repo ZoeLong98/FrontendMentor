@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="text-white flex flex-col justify-center items-center relative mt-24">
+    <div className="text-white flex flex-col justify-center items-center relative mt-16">
       <picture className="w-full">
         <source
           srcSet="/home/mobile/image-header.jpg"
@@ -32,7 +32,7 @@ export default function Header() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link href="/detail/4">
+          <Link href="/detail/xx99-mark-two-headphones">
             <button className="yellow-button">SEE PRODUCT</button>
           </Link>
         </div>

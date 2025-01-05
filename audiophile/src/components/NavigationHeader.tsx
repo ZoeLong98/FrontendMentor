@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import ThreeCategory from "./ThreeCategory";
 import Cart from "./Cart";
 
 export default function NavigationHeader() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const showMenu = () => {
@@ -29,10 +31,14 @@ export default function NavigationHeader() {
     // Check the initial width
     handleResize();
 
+    if (pathname === "/checkout") {
+      setIsCartOpen(false);
+    }
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [pathname]);
   return (
     <>
       <div className="bg-secondary text-white w-full fixed top-0 z-50">
@@ -73,6 +79,7 @@ export default function NavigationHeader() {
             width={24}
             height={24}
             onClick={showCart}
+            className="cursor-pointer"
           />
         </div>
         <div className="max-w-componentMax border-t mx-auto border-gray-800 w-full"></div>

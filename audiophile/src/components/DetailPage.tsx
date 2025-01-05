@@ -4,6 +4,7 @@ import Amount from "./Amount";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
+import { CartItem } from "../types";
 
 export default function DetailPage({ item }: DetailPageProps) {
   const router = useRouter();
@@ -17,10 +18,10 @@ export default function DetailPage({ item }: DetailPageProps) {
   };
   const addToCart = () => {
     const cart = localStorage.getItem("audiophileCart");
-    let cartItems = cart ? JSON.parse(cart) : [];
+    const cartItems = cart ? JSON.parse(cart) : [];
 
     const existingItemIndex = cartItems.findIndex(
-      (cartItem: any) => cartItem.id === item.id
+      (cartItem: CartItem) => cartItem.id === item.id
     );
 
     if (existingItemIndex !== -1) {

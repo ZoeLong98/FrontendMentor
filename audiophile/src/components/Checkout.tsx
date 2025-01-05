@@ -11,20 +11,22 @@ export default function Checkout({
     const form = event.currentTarget;
     const requiredFields = form.querySelectorAll("[required]");
     const allFilled = Array.from(requiredFields).every(
-      (field: any) => field.value.trim() !== ""
+      (field) => (field as HTMLInputElement).value.trim() !== ""
     );
     setIsFormValid(allFilled);
   };
+
   useEffect(() => {
     const form = document.querySelector("form");
     if (form) {
       const requiredFields = form.querySelectorAll("[required]");
       const allFilled = Array.from(requiredFields).every(
-        (field: any) => field.value.trim() !== ""
+        (field) => (field as HTMLInputElement).value.trim() !== ""
       );
       setIsFormValid(allFilled);
     }
   }, [paymentMethod]);
+
   useEffect(() => {
     onFormValid(isFormValid);
   }, [isFormValid, onFormValid]);
@@ -39,9 +41,9 @@ export default function Checkout({
     <div className="w-full bg-white mt-6 px-8 py-1 rounded-lg">
       <div className="subtitle">CHECKOUT</div>
       <form action="submit" onChange={handleFormChange}>
-        <div className="sm:mb-8">
+        <div className="mb-8">
           <div className="text-primary text-sm my-3">BILLING DETAILS</div>
-          <div className="flex flex-row w-full gap-3 mb-3">
+          <div className="flex flex-col sm:flex-row w-full gap-3 mb-3">
             <label className="flex flex-col gap-2 sm:w-1/2">
               Name
               <input
@@ -63,7 +65,7 @@ export default function Checkout({
               />
             </label>
           </div>
-          <label className="flex flex-col gap-2 sm:w-1/2 pr-2">
+          <label className="flex flex-col gap-2 sm:w-1/2 sm:pr-2">
             Phone Number
             <input
               type="text"
@@ -74,7 +76,8 @@ export default function Checkout({
             />
           </label>
         </div>
-        <div className="sm:mb-8">
+
+        <div className="mb-8">
           <div className="text-primary text-sm my-3">SHIPPING INFO</div>
           <label className="flex flex-col gap-2 mb-3">
             Your Address
@@ -86,7 +89,7 @@ export default function Checkout({
               required
             />
           </label>
-          <div className="flex flex-row w-full gap-3 mb-3">
+          <div className="flex flex-col sm:flex-row w-full gap-3 mb-3">
             <label className="flex flex-col gap-2 sm:w-1/2">
               ZIP Code
               <input
@@ -108,7 +111,7 @@ export default function Checkout({
               />
             </label>
           </div>
-          <label className="flex flex-col gap-2 sm:w-1/2 pr-2">
+          <label className="flex flex-col gap-2 sm:w-1/2 sm:pr-2">
             Country
             <input
               type="text"
@@ -119,11 +122,12 @@ export default function Checkout({
             />
           </label>
         </div>
-        <div className="sm:mb-8">
+
+        <div className="mb-8">
           <div className="text-primary text-sm my-3">PAYMENT DETAILS</div>
-          <div className="flex flex-row justify-between mb-3">
+          <div className="flex flex-col sm:flex-row justify-between mb-3">
             <div>Payment Method</div>
-            <div className="flex flex-col gap-3 w-1/2">
+            <div className="flex flex-col gap-3 sm:w-1/2">
               <label className="border p-3 rounded-lg">
                 <input
                   type="radio"
@@ -146,7 +150,7 @@ export default function Checkout({
             </div>
           </div>
 
-          <div className="flex flex-row w-full gap-3">
+          <div className="flex flex-col sm:flex-row w-full gap-3 mb-6">
             <label className="flex flex-col gap-2 sm:w-1/2">
               e-Money Number
               <input

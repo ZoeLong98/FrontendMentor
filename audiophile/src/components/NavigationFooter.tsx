@@ -30,10 +30,10 @@ export default function NavigationFooter() {
             </div>
           </div>
           <p className="text-xs my-6 leading-5 text-gray-500 text-center sm:text-left sm:mb-24 lg:w-1/2">
-            Audiophile is an all in one stop to fulfill your audio needs. We're
-            a small team of music lovers and sound specialists who are devoted
-            to helping you get the most out of personal audio. Come and visit
-            our demo facility - we’re open 7 days a week.
+            Audiophile is an all in one stop to fulfill your audio needs.
+            We&apos;re a small team of music lovers and sound specialists who
+            are devoted to helping you get the most out of personal audio. Come
+            and visit our demo facility - we&apos;re open 7 days a week.
           </p>
           <div className="text-xs my-4 leading-5 text-gray-500 order-1 sm:absolute sm:bottom-0 sm:left-0">
             Copyright 2021. All Rights Reserved

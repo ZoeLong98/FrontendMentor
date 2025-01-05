@@ -2,14 +2,12 @@
 import DetailPage from "@/components/DetailPage";
 import { DetailPageProps } from "@/types";
 import React, { useEffect, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { fetchDataBySlug } from "@/api";
 import ThreeCategory from "@/components/ThreeCategory";
 import End from "@/components/End";
-import { stringify } from "querystring";
 
 export default function Detail() {
-  const router = useRouter();
   const { slug } = useParams();
   const [item, setItem] = useState<DetailPageProps["item"] | null>(null);
 
