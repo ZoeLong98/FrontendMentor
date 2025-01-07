@@ -45,10 +45,10 @@ export default function Cart() {
     <div className="z-30 bg-black fixed bg-opacity-50 w-full h-screen top-0 right-0">
       <div className="bg-white w-96 px-8 pb-8 fixed top-28 right-0 rounded-lg">
         <div className="flex justify-between items-center">
-          <div className="subtitle">CART ({cartItems.length})</div>
-          <div className="description cursor-pointer" onClick={removeAll}>
+          <h2>CART ({cartItems.length})</h2>
+          <p className="cursor-pointer" onClick={removeAll}>
             Remove all
-          </div>
+          </p>
         </div>
 
         {cartItems.map((cartItem: CartItem) => (
@@ -64,7 +64,7 @@ export default function Cart() {
                 <div>
                   {cartItem.name.replace(/speaker|headphones|earphones/gi, "")}
                 </div>
-                <div className="description">$ {cartItem.price}</div>
+                <p>$ {cartItem.price}</p>
               </div>
             </div>
             <Amount
@@ -74,7 +74,7 @@ export default function Cart() {
           </div>
         ))}
         <div className="flex justify-between my-3">
-          <div className="description">TOTAL</div>
+          <p>TOTAL</p>
           <div className="font-bold text-lg">$ {total}</div>
         </div>
         <Link href={"/checkout"}>

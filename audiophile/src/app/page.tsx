@@ -22,8 +22,8 @@ export default function Home() {
             />
           </div>
           <div className="self-center text-white max-w-sm flex flex-col mx-auto my-12 text-center items-center md:items-start md:text-left">
-            <div className="title text-6xl">ZX9 SPEAKER</div>
-            <p className="description !text-white">
+            <h1 className="text-6xl">ZX9 SPEAKER</h1>
+            <p className=" !text-white">
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
@@ -41,7 +41,7 @@ export default function Home() {
             className="z-0"
           />
           <div className="z-10 flex flex-col ">
-            <div className="title">ZX7 SPEAKER</div>
+            <h1>ZX7 SPEAKER</h1>
             <Link href={"/detail/zx7-speaker"}>
               <div className="simple-button">SEE PRODUCT</div>
             </Link>
@@ -70,7 +70,7 @@ export default function Home() {
           </div>
           <div className="bg-warmWhite sm:w-1/2 rounded-lg p-8">
             <div className="z-10 flex flex-col justify-center h-full">
-              <div className="title">YX1 EARPHONES</div>
+              <h1>YX1 EARPHONES</h1>
               <Link href={"/detail/yx1-earphones"}>
                 <div className="simple-button">SEE PRODUCT</div>
               </Link>

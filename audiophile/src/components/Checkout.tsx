@@ -39,7 +39,7 @@ export default function Checkout({
 
   return (
     <div className="w-full bg-white mt-6 px-8 py-1 rounded-lg">
-      <div className="subtitle">CHECKOUT</div>
+      <h2>CHECKOUT</h2>
       <form action="submit" onChange={handleFormChange}>
         <div className="mb-8">
           <div className="text-primary text-sm my-3">BILLING DETAILS</div>

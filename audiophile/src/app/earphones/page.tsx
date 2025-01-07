@@ -18,7 +18,7 @@ export default function Earphones() {
   }, []);
   return (
     <div className="flex flex-col items-center mt-32 max-w-componentMax px-6 md:mx-auto">
-      <div className="bg-secondary  text-white w-screen mt-[-32px] h-[90px] sm:h-[132px] flex items-center justify-center text-[24px] sm:text-[32px] mb-8">
+      <div className="bg-secondary  text-white w-screen mt-[-2rem] h-[90px] sm:h-[12rem flex items-center justify-center text-[1.5rem] sm:text-[2rem] mb-8">
         EARPHONES
       </div>
       {data &&

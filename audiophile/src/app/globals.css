@@ -30,11 +30,11 @@ body {
 }
 
 /* font */
-.title {
+h1 {
   @apply font-semibold text-3xl sm:text-4xl my-5;
 }
 
-.subtitle {
+h2 {
   @apply font-medium text-xl sm:text-2xl my-5;
 }
 

@@ -24,11 +24,9 @@ export default function Header() {
       </picture>
       <div className="absolute md:max-w-componentMax w-full mx-auto flex flex-col items-center md:items-start">
         <div className="max-w-sm px-5 md:ml-16 flex flex-col text-center items-center md:items-start md:text-left">
-          <div className="newProduct text-gray-600">NEW PRODUCT</div>
-          <div className="title text-4xl sm:text-6xl">
-            XX99 Mark II HEADPHONES
-          </div>
-          <p className="description">
+          <div className="newProduct !text-gray-400">NEW PRODUCT</div>
+          <h1 className="text-4xl sm:text-6xl">XX99 Mark II HEADPHONES</h1>
+          <p className=" !text-gray-400">
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>

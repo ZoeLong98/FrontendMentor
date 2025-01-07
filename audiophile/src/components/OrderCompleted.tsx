@@ -44,7 +44,7 @@ export default function OrderCompleted({
                       ""
                     )}
                   </div>
-                  <div className="description">$ {cartItems[0].price}</div>
+                  <p>$ {cartItems[0].price}</p>
                 </div>
               </div>
               <div className="text-gray-500">x{cartItems[0].amount}</div>
@@ -53,9 +53,9 @@ export default function OrderCompleted({
             {cartItems.length > 1 && (
               <>
                 <div className="border-t-[2px]"></div>
-                <div className="w-full text-center description mt-2">
+                <p className="w-full text-center mt-2">
                   And {cartItems.length - 1} other item(s)
-                </div>
+                </p>
               </>
             )}
           </div>
@@ -63,7 +63,7 @@ export default function OrderCompleted({
             <div className="text-gray-400 font-thin text-[15px] ">
               GRAND TOTAL
             </div>
-            <div className="text-white text-[18px] font-bold mt-3">
+            <div className="text-white text-[1rem font-bold mt-3">
               $ {total}
             </div>
           </div>

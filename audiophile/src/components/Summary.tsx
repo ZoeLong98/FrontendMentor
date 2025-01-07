@@ -51,26 +51,26 @@ export default function Summary({ isValid }: SummaryProps) {
                 <div>
                   {cartItem.name.replace(/speaker|headphones|earphones/gi, "")}
                 </div>
-                <div className="description">$ {cartItem.price}</div>
+                <p>$ {cartItem.price}</p>
               </div>
             </div>
             <div className="text-gray-500">x{cartItem.amount}</div>
           </div>
         ))}
         <div className="flex justify-between ">
-          <div className="description">TOTAL</div>
+          <p>TOTAL</p>
           <div className="font-bold text-lg">$ {total}</div>
         </div>
         <div className="flex justify-between">
-          <div className="description">SHIPPING</div>
+          <p>SHIPPING</p>
           <div className="font-bold text-lg">$ {total > 0 ? 50 : 0}</div>
         </div>
         <div className="flex justify-between">
-          <div className="description">VAT (INCLUDED)</div>
+          <p>VAT (INCLUDED)</p>
           <div className="font-bold text-lg">$ {Math.round(0.2 * total)}</div>
         </div>
         <div className="flex justify-between my-3">
-          <div className="description">GRAND TOTAL</div>
+          <p>GRAND TOTAL</p>
           <div className="font-bold text-lg text-primary">
             $ {total > 0 ? total + 50 : 0}
           </div>

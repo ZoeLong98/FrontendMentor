@@ -60,8 +60,8 @@ export default function OverviewItem({
         }`}
       >
         {isNew && <div className="newProduct text-primary">NEW PRODUCT</div>}
-        <div className="title">{title}</div>
-        <p className="description">{description}</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
         <button className="yellow-button" onClick={GoDetail}>
           SEE PRODUCT
         </button>

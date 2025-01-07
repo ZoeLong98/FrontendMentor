@@ -43,9 +43,9 @@ export default function DetailPage({ item }: DetailPageProps) {
   };
   return (
     <div className="my-14">
-      <div className="description cursor-pointer" onClick={goBack}>
+      <p className="cursor-pointer" onClick={goBack}>
         Go Back
-      </div>
+      </p>
       <div
         className={`flex flex-col w-full items-start sm:items-center justify-start sm:flex-row sm:gap-8 my-4 md:my-5
       }`}
@@ -75,8 +75,8 @@ export default function DetailPage({ item }: DetailPageProps) {
           {item.new && (
             <div className="newProduct text-golden">NEW PRODUCT</div>
           )}
-          <div className="title">{item.name}</div>
-          <p className="description">{item.description}</p>
+          <h1>{item.name}</h1>
+          <p>{item.description}</p>
           <div className="price mt-5">${item.price}</div>
           <div className="flex justify-start items-center  gap-6 mt-5">
             <Amount a={amount} onAmountChange={handleAmountChange} />
@@ -89,16 +89,16 @@ export default function DetailPage({ item }: DetailPageProps) {
 
       <div className="flex flex-col md:flex-row gap-8 mt-12 w-full">
         <div className="md:w-3/5">
-          <div className="subtitle !mt-0">FEATURES</div>
-          <div className="description">{item.features}</div>
+          <h2 className="!mt-0">FEATURES</h2>
+          <p>{item.features}</p>
         </div>
         <div className="md:ml-12 w-full md:w-2/5 flex flex-col sm:flex-row md:flex-col">
-          <div className="subtitle !mt-0 sm:w-1/2 md:w-full">IN THE BOX</div>
+          <h2 className="!mt-0 sm:w-1/2 md:w-full">IN THE BOX</h2>
           <div>
             {item.includes.map((item, index) => (
-              <div className="mb-2" key={index}>
+              <div className="mb-2 flex flex-row" key={index}>
                 <span className="text-primary mr-6">{item.quantity}x</span>
-                <span className="description">{item.item} </span>
+                <p>{item.item} </p>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ export default function DetailPage({ item }: DetailPageProps) {
 
       {/* you may also like */}
       <div className="flex flex-col gap-5 mt-8 w-full items-center">
-        <div className="subtitle">YOU MAY ALSO LIKE</div>
+        <h2>YOU MAY ALSO LIKE</h2>
         <div className="flex flex-col sm:flex-row gap-5 w-full">
           {item.others.map((item, index) => (
             <div
@@ -168,7 +168,7 @@ export default function DetailPage({ item }: DetailPageProps) {
                   />
                 </picture>
               </div>
-              <div className="subtitle !text-lg">{item.name}</div>
+              <h2 className="!text-lg">{item.name}</h2>
               <Link href={`/detail/${item.slug}`}>
                 <button className="yellow-button !mt-0">SEE PRODUCT</button>
               </Link>
