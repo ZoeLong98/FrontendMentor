@@ -3,8 +3,7 @@
 import "./globals.css";
 import NavigationHeader from "@/components/NavigationHeader";
 import NavigationFooter from "@/components/NavigationFooter";
-import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 // export const metadata: Metadata = {
 //   title: "AudioPhile",
@@ -16,8 +15,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-
   return (
     <html lang="en">
       <body className="flex flex-col  min-h-screen">
