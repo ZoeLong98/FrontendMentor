@@ -23,18 +23,7 @@ export default function RootLayout({
       <body className="flex flex-col  min-h-screen">
         <NavigationHeader />
         <AnimatePresence mode="wait">
-          <motion.div
-            key={pathname}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 1 }}
-            transition={{
-              duration: 1.5,
-              ease: "easeInOut",
-            }}
-          >
-            <main className="flex-grow w-full">{children}</main>
-          </motion.div>
+          <main className="flex-grow w-full">{children}</main>
         </AnimatePresence>
         <NavigationFooter />
       </body>

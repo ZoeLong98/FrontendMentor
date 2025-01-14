@@ -37,7 +37,7 @@ export default function Summary({ isValid }: SummaryProps) {
     <>
       {" "}
       <div className="flex flex-col mt-6 w-full bg-white rounded-lg px-8">
-        <div className="bg-white subtitle">SUMMARY</div>
+        <h2>SUMMARY</h2>
         {cartItems.map((cartItem: CartItem) => (
           <div className="flex justify-between mb-6" key={cartItem.id}>
             <div className="flex flex-row gap-2 items-center">

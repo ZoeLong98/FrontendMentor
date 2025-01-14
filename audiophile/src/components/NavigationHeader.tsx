@@ -85,7 +85,10 @@ export default function NavigationHeader() {
         <div className="max-w-componentMax border-t mx-auto border-gray-800 w-full"></div>
       </div>
       {isMenuOpen && (
-        <div className="w-full h-screen bg-black bg-opacity-50 fixed top-0 z-30">
+        <div
+          className="w-full h-screen bg-black bg-opacity-50 fixed top-0 z-30"
+          onClick={showMenu}
+        >
           <div className="w-full bg-white p-5 fixed z-40 top-20">
             <ThreeCategory />
           </div>

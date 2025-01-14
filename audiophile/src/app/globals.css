@@ -38,7 +38,7 @@ h2 {
   @apply font-medium text-xl sm:text-2xl my-5;
 }
 
-.description {
+p {
   @apply font-light text-sm text-gray-500;
 }
 
