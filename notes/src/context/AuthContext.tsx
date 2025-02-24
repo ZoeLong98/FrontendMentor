@@ -8,7 +8,7 @@ import { auth } from "@/firebase.config";
 interface AuthContextType {
   user: User | null; // The user can either be a Firebase User or null if not logged in
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
-  loading: boolean;
+  loading: boolean; // A loading state to indicate if the user is being fetched
 }
 
 // Create the context with a default value

@@ -28,6 +28,15 @@ export default function Home() {
     }
   }, [user]);
 
+  useEffect(() => {
+    if (!user) {
+      const timer = setTimeout(() => {
+        redirect("/login");
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [loading, user]);
+
   if (loading) {
     // 显示加载指示器
     return (
@@ -73,7 +82,5 @@ export default function Home() {
         />
       </div>
     );
-  } else {
-    redirect("/login");
   }
 }
