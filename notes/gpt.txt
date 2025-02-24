@@ -1,0 +1,127 @@
+这是一个典型的响应式布局问题，可以通过 **组件分离、逻辑复用** 和 **状态管理** 来高效实现代码复用。以下是解决思路：
+
+---
+
+### 1. **组件划分**
+将每个 section 视为一个独立的组件，负责各自的功能和数据渲染：
+- 每个 section 组件只关注自己的逻辑和视图。
+- 创建一个通用的 `Section` 容器组件，封装通用逻辑（比如状态共享）。
+
+```jsx
+// components/Section.jsx
+const Section = ({ title, content }) => {
+  return (
+    <div className="p-4">
+      <h2 className="text-xl font-bold">{title}</h2>
+      <div>{content}</div>
+    </div>
+  );
+};
+
+export default Section;
+```
+
+---
+
+### 2. **状态集中管理**
+使用全局状态（如 `useContext` 或 `zustand`）或父组件的 `useState`，控制各 section 的交互逻辑。例如：
+
+```jsx
+import { useState } from 'react';
+import Section from './components/Section';
+
+const sectionsData = [
+  { id: 'section1', title: 'Section 1', content: 'Content for section 1' },
+  { id: 'section2', title: 'Section 2', content: 'Content for section 2' },
+  { id: 'section3', title: 'Section 3', content: 'Content for section 3' },
+];
+
+export default function Page() {
+  const [activeSection, setActiveSection] = useState('section1'); // 当前激活的 section
+  const [sectionStates, setSectionStates] = useState({}); // 每个 section 的内部状态
+
+  const handleSectionChange = (id) => setActiveSection(id);
+
+  return (
+    <div>
+      {/* 小屏幕：导航栏 */}
+      <nav className="lg:hidden">
+        {sectionsData.map((section) => (
+          <button
+            key={section.id}
+            onClick={() => handleSectionChange(section.id)}
+            className={`p-2 ${activeSection === section.id ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          >
+            {section.title}
+          </button>
+        ))}
+      </nav>
+
+      {/* 大屏幕：并列展示 */}
+      <div className="hidden lg:grid lg:grid-cols-3 gap-4">
+        {sectionsData.map((section) => (
+          <Section
+            key={section.id}
+            title={section.title}
+            content={section.content} // 或动态传递内容
+          />
+        ))}
+      </div>
+
+      {/* 小屏幕：仅展示当前选择的 section */}
+      <div className="lg:hidden">
+        {sectionsData
+          .filter((section) => section.id === activeSection)
+          .map((section) => (
+            <Section
+              key={section.id}
+              title={section.title}
+              content={section.content}
+            />
+          ))}
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+### 3. **样式与布局**
+利用 Tailwind CSS 或 CSS Media Query 实现响应式布局：
+- **大屏幕：并列展示**，使用 `grid` 或 `flex` 布局。
+- **小屏幕：单独显示**，通过 `hidden` 和 `block` 控制。
+
+**样式例子：**
+
+```css
+@media (min-width: 1024px) {
+  .section-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 根据 section 数量调整 */
+    gap: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .section-container {
+    display: block;
+  }
+}
+```
+
+---
+
+### 4. **逻辑复用**
+1. **状态共享**：通过 Context 或全局状态管理（如 Zustand、Redux）在各 section 中共享状态。
+2. **提取通用逻辑**：将所有 section 的交互逻辑提取到父组件中，只需通过 `props` 将所需数据传递给子组件。
+
+---
+
+### 优化点
+1. **动态加载：** 使用 `React.lazy` 加载仅需要的 section。
+2. **动画切换：** 用 `Framer Motion` 或 `Tailwind` 的 `transition` 增加切换动画。
+3. **更灵活的配置：** 让 `sectionsData` 支持动态内容更新，减少硬编码。
+
+---
+
+这样，你可以最大限度地复用代码，且满足小屏幕和大屏幕的不同布局需求！

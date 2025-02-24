@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+/* Text */
+h1 {
+  @apply text-2xl leading-[120%] font-bold tracking-[-0.5px];
+}
+h2 {
+  @apply text-xl leading-[120%] font-bold tracking-[-0.5px];
+}
+h3 {
+  @apply text-base leading-[120%] font-semibold tracking-[-0.3px];
+}
+h4 {
+  @apply text-sm tracking-[-0.2px] leading-[120%] font-medium;
+}
+h5 {
+  @apply text-sm tracking-[-0.2px] leading-[120%] font-normal;
+}
+h6 {
+  @apply text-xs tracking-[-0.2px] leading-[120%] font-normal;
+}
+
+input {
+  @apply px-4 py-3 rounded-lg border border-neutral_300;
+}
+
+/* line */
+hr {
+  @apply border-t border-neutral_200 my-4 w-full h-[1px];
+}
+
+.vertical {
+  @apply border-r border-neutral_100 w-[1px] flex;
+}
+
+/* button */
+.primary-button {
+  @apply bg-blue_500 text-white py-3 px-4 text-sm tracking-[-0.2px] leading-[120%] font-medium
+  rounded-lg;
+}
+
+.secondary-button {
+  @apply bg-neutral-100 text-black py-3 px-4 text-sm tracking-[-0.2px] leading-[120%] font-medium
+  rounded-lg;
+}
+.border-button {
+  @apply text-black py-3 px-4 text-base tracking-[0.5px] leading-[100%] font-medium
+  rounded-lg border border-neutral_300;
+}
+
+.tag {
+  @apply hover:bg-neutral_100 dark:hover:bg-neutral_600;
+}
+
+.tag:hover svg path {
+  color: #335cff;
+}
