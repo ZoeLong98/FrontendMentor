@@ -85,8 +85,6 @@ export default function NoteView({
         </div>
 
         <NoteForm note={note} userid={userid} />
-
-        {/* <ButtonForm /> */}
       </div>
 
       {showDeletePopup && (

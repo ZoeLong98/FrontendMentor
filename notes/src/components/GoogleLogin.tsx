@@ -9,12 +9,7 @@ export default function GoogleLogIn() {
         className="border-button flex flex-row items-center justify-center gap-2"
         onClick={signupWithGoogle}
       >
-        <Image
-          src={"/images/icon-google.svg"}
-          width={24}
-          height={24}
-          alt="google"
-        />
+        <Image src={"/icon-google.svg"} width={24} height={24} alt="google" />
         Google
       </button>
     </section>

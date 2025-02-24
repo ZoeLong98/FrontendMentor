@@ -40,11 +40,19 @@ export default function NoteForm({
     }
   }, [note]);
 
+  useEffect(() => {
+    if (state.message) {
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
+    }
+  }, [state.message]);
+
   return (
     <form
       id="NoteForm"
       action={action}
-      className="flex flex-col px-6 py-5 h-fit flex-grow "
+      className="flex flex-col px-6 py-5 h-fit flex-grow relative"
     >
       <input name="userid" type="hidden" value={userid} />
       {note && <input name="id" type="hidden" value={note.id} />}
@@ -77,7 +85,7 @@ export default function NoteForm({
         rows={80}
         placeholder="Start typing your note here..."
       />
-      <div className="mt-4">
+      <div className="mt-4 absolute bottom-4 ">
         {isPending && <p className="text-blue-500">Saving...</p>}
         {state.message && <p className="text-green-500">{state.message}</p>}
       </div>

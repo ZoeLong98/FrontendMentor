@@ -19,7 +19,7 @@ export default function SignupForm() {
   return (
     <div className="lg:col-start-4 lg:col-end-10 sm:col-start-2 sm:col-end-8 col-start-1 col-end-9 bg-white p-12 border border-neutral_200 rounded-xl h-fit my-auto">
       <form action={formAction} className="flex flex-col gap-4 items-center ">
-        <Image src={"/images/logo.svg"} width={95} height={28} alt="logo" />
+        <Image src={"/logo.svg"} width={95} height={28} alt="logo" />
         <section className="flex flex-col gap-2 text-center">
           <h1>Create Your Account</h1>
           <h5 className="text-neutral_500">
@@ -32,7 +32,7 @@ export default function SignupForm() {
           <PasswordInput title="Password" name="password" />
           <div className="text-neutral_600 flex flex-row gap-2 my-[-0.5rem]">
             <Image
-              src={"/images/icon-info.svg"}
+              src={"/icon-info.svg"}
               width={16}
               height={16}
               alt="requirement"

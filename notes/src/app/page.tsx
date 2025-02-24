@@ -1,10 +1,9 @@
 "use client";
 import { useAuth } from "@/context/AuthContext";
 import { redirect } from "next/navigation";
-import { getTags } from "@/actions/notes";
+import { getTags, getNotes } from "@/actions/notes";
 import { useEffect, useState } from "react";
 import { Note } from "@/assets/types";
-import { getNotes } from "@/actions/notes";
 import Laptop from "@/pages/laptop";
 import Mobile from "@/pages/mobile";
 
@@ -17,8 +16,9 @@ export default function Home() {
   const [isunsaved, setUnsaved] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isSetting, setIsSetting] = useState(false);
-  const { user } = useAuth();
+  const { user, loading } = useAuth(); // 添加 loading 状态
   console.log(currentNote);
+
   useEffect(() => {
     if (user && user.uid) {
       const notes = getNotes(user.uid);
@@ -27,6 +27,15 @@ export default function Home() {
       setNotes(notes);
     }
   }, [user]);
+
+  if (loading) {
+    // 显示加载指示器
+    return (
+      <div className="flex justify-center items-center h-screen w-screen text-5xl text-blue-700">
+        Loading...
+      </div>
+    );
+  }
 
   if (user != null) {
     return (

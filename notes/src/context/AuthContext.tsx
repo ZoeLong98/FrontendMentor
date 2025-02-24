@@ -8,6 +8,7 @@ import { auth } from "@/firebase.config";
 interface AuthContextType {
   user: User | null; // The user can either be a Firebase User or null if not logged in
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  loading: boolean;
 }
 
 // Create the context with a default value
@@ -19,7 +20,7 @@ export function AuthProvider({
   children: React.ReactNode;
 }>) {
   const [user, setUser] = useState<User | null>(null);
-
+  const loading = !user;
   useEffect(() => {
     console.log("Auth provider mounted", user);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -29,7 +30,7 @@ export function AuthProvider({
   }, [user]);
 
   // Memoize user to ensure stability
-  const value = useMemo(() => ({ user, setUser }), [user]);
+  const value = useMemo(() => ({ user, setUser, loading }), [user]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

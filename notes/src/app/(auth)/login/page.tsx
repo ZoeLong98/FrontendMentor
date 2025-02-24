@@ -34,7 +34,7 @@ export default function LoginForm() {
     return (
       <div className="col-start-1 col-end-9 lg:col-start-4 lg:col-end-10 sm:col-start-2 sm:col-end-8  bg-white p-12 border border-neutral_200 rounded-xl my-auto h-fit">
         <form action={formAction} className="flex flex-col gap-4 items-center ">
-          <Image src={"/images/logo.svg"} width={95} height={28} alt="logo" />
+          <Image src={"/logo.svg"} width={95} height={28} alt="logo" />
           <section className="flex flex-col gap-2 text-center">
             <h1>Welcome to Note</h1>
             <h5 className="text-neutral_500">
