@@ -19,16 +19,16 @@ export default function Label({
     <section className="flex flex-row gap-2  items-center mb-2">
       <label
         htmlFor="label"
-        className="flex flex-row gap-[0.375rem] w-[115px] items-center"
+        className="flex flex-row gap-[0.375rem] w-fit items-center"
       >
-        <div className="h-6 w-6">
+        <div className="h-7 w-7">
           <IconComponent Icon={icon} size="100%" />
         </div>
         <h5>{label}</h5>
       </label>
       <input
         type="text"
-        className="!p-0 !w-full !text-[14px] !border-none dark:bg-neutral_800"
+        className="!p-0 !w-full !text-[14px] !border-none dark:bg-neutral_800 overflow-x-scroll"
         name={label}
         value={input}
         onChange={(e) => setInput(e.target.value)}

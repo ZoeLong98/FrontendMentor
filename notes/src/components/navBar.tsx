@@ -13,11 +13,11 @@ export default function NavBar({
   setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }) {
   return (
-    <nav className="lg:hidden w-full flex justify-between px-8 py-3 fixed bottom-0 border-t border-gray-200 bg-white dark:bg-neutral_800">
+    <nav className="lg:hidden w-full flex justify-between py-3 fixed bottom-0 border-t border-gray-200 bg-white dark:bg-neutral_800 z-20">
       <div
         onClick={() => setActiveSection("home")}
         className={`cursor-pointer hover:text-blue-500${
-          activeSection === "home" ? "bg-blue-50 text-blue-500" : ""
+          activeSection === "home" ? "bg-blue-50  text-blue-500" : ""
         }`}
       >
         <NavIcon icon={home} text="Home" />
