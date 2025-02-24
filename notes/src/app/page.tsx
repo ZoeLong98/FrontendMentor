@@ -32,7 +32,7 @@ export default function Home() {
     if (!user) {
       const timer = setTimeout(() => {
         redirect("/login");
-      }, 1500);
+      }, 50);
       return () => clearTimeout(timer);
     }
   }, [loading, user]);
