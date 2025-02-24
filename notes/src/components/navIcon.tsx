@@ -8,7 +8,7 @@ export default function NavIcon({
   text: string;
 }) {
   return (
-    <div className="flex flex-col items-center w-20 hover:bg-blue-50 py-1">
+    <div className="flex flex-col items-center w-20 py-1">
       <div className="w-6 h-6">
         <IconComponent Icon={icon} />
       </div>

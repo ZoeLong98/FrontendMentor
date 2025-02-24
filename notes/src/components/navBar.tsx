@@ -13,11 +13,11 @@ export default function NavBar({
   setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }) {
   return (
-    <nav className="lg:hidden w-full flex justify-between py-3 fixed bottom-0 border-t border-gray-200 bg-white dark:bg-neutral_800 z-20">
+    <nav className="lg:hidden w-full flex justify-around py-3 fixed bottom-0 border-t border-gray-200 bg-white dark:bg-neutral_800 z-20">
       <div
         onClick={() => setActiveSection("home")}
-        className={`cursor-pointer hover:text-blue-500${
-          activeSection === "home" ? "bg-blue-50  text-blue-500" : ""
+        className={`cursor-pointer hover:text-blue-500 ${
+          activeSection === "home" ? " text-blue-500" : ""
         }`}
       >
         <NavIcon icon={home} text="Home" />
@@ -39,7 +39,7 @@ export default function NavBar({
           setActiveSection("archive");
         }}
         className={`cursor-pointer hover:text-blue-500${
-          activeSection === "archive" ? "bg-blue-50 text-blue-500" : ""
+          activeSection === "archive" ? " text-blue-500" : ""
         }`}
       >
         <NavIcon icon={archive} text="Archive" />
@@ -49,7 +49,7 @@ export default function NavBar({
       <div
         onClick={() => setActiveSection("tags")}
         className={`cursor-pointer hover:text-blue-500${
-          activeSection === "tags" ? "bg-blue-50 text-blue-500" : ""
+          activeSection === "tags" ? " text-blue-500" : ""
         }`}
       >
         <NavIcon icon={tag} text="Tags" />
