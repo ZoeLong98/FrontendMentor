@@ -40,7 +40,7 @@ export default function LoginForm() {
             <h5 className="text-neutral_500">
               Please log in to continue or{" "}
               <span
-                className="underline cursor-pointer"
+                className="underline cursor-pointer text-green-400"
                 onClick={handleDefaultlog}
               >
                 log in as a default user
