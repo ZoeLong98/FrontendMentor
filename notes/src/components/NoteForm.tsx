@@ -85,7 +85,7 @@ export default function NoteForm({
         rows={80}
         placeholder="Start typing your note here..."
       />
-      <div className="mt-4 absolute bottom-4 ">
+      <div className="mt-4 absolute bottom-8 ">
         {isPending && <p className="text-blue-500">Saving...</p>}
         {state.message && <p className="text-green-500">{state.message}</p>}
       </div>

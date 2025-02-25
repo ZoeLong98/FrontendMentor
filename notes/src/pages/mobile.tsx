@@ -11,6 +11,7 @@ import ArrowLeft from "@/assets/svgs/icon-arrow-left.svg";
 import { useState } from "react";
 import Settingbar from "@/components/Settingbar";
 import ColorTheme from "@/components/ColorTheme";
+import FontTheme from "@/components/FontTheme";
 import Arrow_left from "@/assets/svgs/icon-arrow-left.svg";
 
 export default function Mobile({
@@ -196,7 +197,7 @@ export default function Mobile({
                   </div>
                   <h5>Settings</h5>
                 </div>
-                <ColorTheme />
+                <FontTheme />
               </>
             )}
           </div>
