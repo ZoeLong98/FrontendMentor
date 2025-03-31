@@ -1,0 +1,236 @@
+:root {
+  --White: #ffffff;
+  --Black: #000000;
+  --Grey500: #626c7f;
+  --Grey50: #f4f6fa;
+  --Blue950: #2d3949;
+  --Blue900: #313e51;
+  --Blue850: #3b4d66;
+  --Blue500: #306aff;
+  --Blue300: #abc1e1;
+  --Blue100: #edf1f9;
+  --Blue50: #ebf0ff;
+  --Green500: #2fd887;
+  --Green100: #e0fdef;
+  --Purple600: #a729f5;
+  --Purple100: #f6e7ff;
+  --Orange400: #ff7e35;
+  --Orange50: #fff5ed;
+  --Red500: #ee5454;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "RubikMedium";
+  background-color: var(--Grey50);
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  max-width: 1157px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+section {
+  width: 100%;
+}
+
+h1 {
+  font-size: 144px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    height: fit-content;
+    gap: 64px;
+  }
+}
+@media (max-width: 375px) {
+  main {
+    flex-direction: column;
+    height: fit-content;
+    gap: 32px;
+  }
+}
+
+@font-face {
+  font-family: "RubikMedium";
+  src: url("assets/fonts/static/Rubik-Medium.ttf");
+}
+@font-face {
+  font-family: "RubikLight";
+  src: url("assets/fonts/static/Rubik-Regular.ttf");
+}
+@font-face {
+  font-family: "RubikItalic";
+  src: url("assets/fonts/static/Rubik-Italic.ttf");
+}
+
+.TextPreset1 {
+  font-size: 144px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+.TextPreset1Mobile {
+  font-size: 88px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+.TextPreset2Medium {
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+.TextPreset2MobileMedium {
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+.TextPreset2Light {
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-family: "RubikLight";
+}
+.TextPreset2MobileLight {
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-family: "RubikLight";
+}
+.TextPreset3 {
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+.TextPreset3Mobile {
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+.TextPreset4 {
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+.TextPreset4Mobile {
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+.TextPreset5Medium {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-family: "RubikMedium";
+}
+.TextPreset5Regular {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-family: "RubikLight";
+}
+.TextPreset5Mobile {
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-family: "RubikItalic";
+}
+.TextPreset6 {
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-family: "RubikItalic";
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  max-width: 564px;
+  width: 90%;
+  padding: 24px;
+  background: var(--White);
+  border: none;
+  border-radius: 24px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.btn-submit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 564px;
+  width: 90%;
+  padding: 24px;
+  border: none;
+  border-radius: 24px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.btn-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-wrong {
+  border: var(--Red500) 2px solid;
+}
+
+.btn-correct {
+  border: var(--Green500) 2px solid;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 16px;
+  max-width: 465px;
+}
+
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.result-board {
+  background-color: var(--White);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  border-radius: 24px;
+  max-width: 90%;
+}

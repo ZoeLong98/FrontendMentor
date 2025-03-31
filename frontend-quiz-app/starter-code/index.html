@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="global.css" />
+    <title>Frontend Mentor | Frontend quiz app</title>
+  </head>
+  <body>
+    <header></header>
+    <!-- Quiz menu start -->
+    <main>
+      <section class="text-container">
+        <div id="welcome">
+          <span
+            style="font-weight: 100; display: inline-block"
+            class="TextPreset2Light"
+            >Welcome to the</span
+          >
+          <span style="font-weight: 700" class="TextPreset2Light"
+            >Frontend Quiz!</span
+          >
+          <div class="TextPreset6" style="margin-top: 40px">
+            Pick a subject to get started.
+          </div>
+        </div>
+        <div id="question" style="display: none">
+          <div
+            id="question-index"
+            class="TextPreset6"
+            style="color: var(--Grey500)"
+          ></div>
+          <div id="question-text" class="TextPreset3"></div>
+        </div>
+        <div id="quizCompleted" style="display: none">
+          <span class="TextPreset2Light">Quiz completed</span>
+          <span class="TextPreset2Medium">You scored...</span>
+        </div>
+      </section>
+      <section>
+        <div class="option-list" id="main-menu">
+          <div id="HTML"></div>
+          <div id="CSS"></div>
+          <div id="JavaScript"></div>
+          <div id="Accessibility"></div>
+        </div>
+        <div class="option-list" id="question-options" style="display: none">
+          <div id="A"></div>
+          <div id="B"></div>
+          <div id="C"></div>
+          <div id="D"></div>
+        </div>
+        <div class="option-list" id="quiz-results" style="display: none">
+          <div class="result-board">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                margin: auto;
+              "
+            >
+              <div class="btn-icon" id="icon"></div>
+              <div class="TextPreset4" id="category"></div>
+            </div>
+            <div class="TextPreset1" id="score"></div>
+            <div class="TextPreset5" style="color: var(--Grey500)">
+              out of 10
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
